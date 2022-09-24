@@ -10,7 +10,12 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  position: sticky;
+  background-color: white;
+  top: 0;
+  z-index: 1;
 }
+
 
 .header__logo {
   height: 30px;
@@ -37,13 +42,12 @@ button {
   cursor: pointer;
   box-shadow: 0 16px 36px rgb(52 213 68 / 22%);
   padding: 15px;
-
 }
 
 button:hover {
   background-color: #f6980c;
   box-shadow: 0 16px 36px rgba(246 152 12 / 20%);
-  transition: background-color 0,3 ease-in;
+  transition: background-color 0, 3 ease-in;
 }
 
 .about {
@@ -55,6 +59,7 @@ button:hover {
   background: url('img/back.png') no-repeat;
   background-position: center;
   background-size: cover;
+  --animate-duration: 2s;
 }
 
 .about__image {
@@ -64,6 +69,22 @@ button:hover {
 .about__sun-image {
   width: 100px;
   height: 100px;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: rotation;
+  position: absolute;
+}
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .about h1 {
@@ -101,7 +122,6 @@ button:hover {
   padding-top: 115px;
   padding-bottom: 115px;
   text-align: center;
-  margin-top: 60px;
 }
 
 form {
@@ -193,4 +213,75 @@ div .footer__links {
 
 .footer__span {
   margin-bottom: 15px;
+}
+
+
+@media (max-width: 1024px) {
+  header {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .form {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .about__image {
+    width: 280px;
+  }
+
+  .about__sun-image {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 719px) {
+  header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .header__logo {
+    height: 20px;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+    padding: 50px 10px 50px 10px;
+  }
+
+  .form {
+    padding: 50px 10px 50px 10px;
+  }
+
+  .about h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+
+  .form h1 {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  footer {
+    padding: 50px 10px 10px 10px;
+  }
+
+  .footer__container {
+    flex-direction: column;
+  }
 }
