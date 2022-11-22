@@ -60,6 +60,7 @@ button:hover {
   background-position: center;
   background-size: cover;
   --animate-duration: 2s;
+  position: relative
 }
 
 .about__image {
@@ -367,6 +368,13 @@ div .footer__links {
 .fa-chevron-right {
   font-size: 15px;
   margin-left: 5px;
+}
+
+.orb-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
 }
 
 @media (max-width: 1024px) {
